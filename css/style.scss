@@ -1,6 +1,7 @@
 @use "./partials/mixins" as mixin;
 @use "./partials/palette" as palette;
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 // get a nice calculator font, maybe a 7 segment if you can find one
 
 main {
@@ -23,10 +24,13 @@ main {
         background-color: palette.$palette-blue;
         border-radius: 20px;
         & .panel {
+            font-family: 'Orbitron', sans-serif;
             height: 70%;
             width: 90%;
             border-radius: 10px;
             background-color: black;
+            direction: rtl;
+            font-size: 2em;
             &--on {
                 @extend .panel;
                 background-color: palette.$palette-grey;
