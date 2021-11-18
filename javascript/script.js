@@ -1,19 +1,18 @@
 import { getByID, getValueByID, createElementWithText } from "./dom-utils.js";
-// Display:
-// A large element to act as a display, show current input and result
+
 const panel = getByID("panel");
 let input = "";
 let result = 0;
 let memory = 0;
-
-
-// First line:
-// A function for turning the display on or if display is on, set ALL input/memory/result variables to 0 (ON/AC button)
 const reset = () => {
     panel.innerText = "";
     result = 0;
     memory = 0;
 }
+
+
+// First line:
+// A function for turning the display on and set ALL input/memory/result variables to 0 (ON/AC button)
 getByID("onAC").addEventListener("click", () => {
     panel.classList.add("panel--on");
     reset();
@@ -45,13 +44,13 @@ const storeToMem = () => {
 const inputButtons = document.querySelectorAll(".input-button");
 inputButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        panel.innerText += button.innerHTML;
+        panel.innerText += button.innerText;
     })
 })
 // A function that sets input variable to empty (C button)``
-const clearInput = () => {
-    input = "";
-}
+getByID("clear").addEventListener("click", () => {
+    panel.innerText = "";
+})
 // A function that calculates the result from the input values (= button)
 
 // Backend:
