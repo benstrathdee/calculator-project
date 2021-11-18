@@ -33,11 +33,14 @@ main, .calculator, .calculator__display {
   background-color: #0455BF;
   border-radius: 20px;
 }
-.calculator__display .panel {
+.calculator__display .panel, .calculator__display .panel--on {
   height: 70%;
   width: 90%;
-  background-color: #948D8D;
   border-radius: 10px;
+  background-color: black;
+}
+.calculator__display .panel--on {
+  background-color: #948D8D;
 }
 .calculator__row1 {
   height: 15%;
