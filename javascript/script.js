@@ -1,22 +1,57 @@
+import { getByID, getValueByID, createElementWithText } from "./dom-utils.js";
 // Display:
 // A large element to act as a display, show current input and result
+const panel = getByID("panel");
+let input = "";
+let result = 0;
+let memory = 0;
+
 
 // First line:
 // A function for turning the display on or if display is on, set ALL input/memory/result variables to 0 (ON/AC button)
+const reset = () => {
+    panel.innerText = "";
+    result = 0;
+    memory = 0;
+}
+getByID("onAC").addEventListener("click", () => {
+    panel.classList.add("panel--on");
+    reset();
+})
+
 // A function to turn off display and set everything to 0 (OFF button)
+getByID("off").addEventListener("click", () => {
+    panel.classList.remove("panel--on");
+    reset();
+})
 // A non-functional music button? Maybe make it do a cute alert
+const musicAlert = () => {
+    // consider looking into if this can make a noise of some sort? Unlikely though
+    // window.alert("beep");
+}
 
 // Second line:
 // A variable to contain a value in memory
-// A function to store something in memory (the MS button)
-// A function to clear memory (MC button)
+// A function to store something in memory (the MRC button)
+const storeToMem = () => {
+    memory = result;
+}
 // A function to enter the memory value in the equation (MR button)
 // A function to add memory value to current input (M+ button)
 // A function to subtract memory value from current input (M- button)
 
 // Numbers block:
 // A single function that takes pressed button and inputs it into the input variable (0-9 + . buttons, +/-/ / /*/%/+-/sqrt)
-// A function that sets input variable to empty (C button)
+const inputButtons = document.querySelectorAll(".input-button");
+inputButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        panel.innerText += button.innerHTML;
+    })
+})
+// A function that sets input variable to empty (C button)``
+const clearInput = () => {
+    input = "";
+}
 // A function that calculates the result from the input values (= button)
 
 // Backend:
