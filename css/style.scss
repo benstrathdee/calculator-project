@@ -24,12 +24,14 @@ main {
         background-color: palette.$palette-blue;
         border-radius: 20px;
         & .panel {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
             font-family: 'Orbitron', sans-serif;
             height: 70%;
             width: 90%;
             border-radius: 10px;
             background-color: black;
-            direction: rtl;
             font-size: 2em;
             &--on {
                 @extend .panel;
@@ -74,13 +76,22 @@ main {
     &--grey {
         @extend .flat-button;
         @include mixin.flatButtonStyle(palette.$palette-grey, 2em);
+        &:active {
+            @extend %pressedButton;
+        }
     }
     &--yellow {
         @extend .flat-button;
         @include mixin.flatButtonStyle(palette.$palette-yellow, 2.5em);
+        &:active {
+            @extend %pressedButton;
+        }
     }
     &--blue {
         @extend .flat-button;
         @include mixin.flatButtonStyle(palette.$palette-blue, 3em);
+        &:active {
+            @extend %pressedButton;
+        }
     }
 }

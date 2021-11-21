@@ -18,6 +18,12 @@ main, .calculator, .calculator__display {
   border-radius: 25px;
 }
 
+.flat-button--grey:active, .flat-button--yellow:active, .flat-button--blue:active {
+  margin-top: 2px;
+  margin-bottom: -2px;
+  text-shadow: none;
+}
+
 .calculator {
   flex-direction: column;
   background-color: #C91532;
@@ -35,12 +41,14 @@ main, .calculator, .calculator__display {
   border-radius: 20px;
 }
 .calculator__display .panel, .calculator__display .panel--on {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   font-family: "Orbitron", sans-serif;
   height: 70%;
   width: 90%;
   border-radius: 10px;
   background-color: black;
-  direction: rtl;
   font-size: 2em;
 }
 .calculator__display .panel--on {
