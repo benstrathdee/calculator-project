@@ -1,1 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+main, .calculator, .calculator__display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.calculator__row1, .calculator__row2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.circle-button--yellow, .circle-button--grey {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.flat-button--grey:active, .flat-button--yellow:active, .flat-button--blue:active {
+  margin-top: 2px;
+  margin-bottom: -2px;
+  text-shadow: none;
+}
+
+.calculator {
+  flex-direction: column;
+  background-color: #C91532;
+  border: 10px solid maroon;
+  border-radius: 50%/10%;
+  height: 500px;
+  width: 300px;
+  margin-top: 5%;
+}
+.calculator__display {
+  height: 25%;
+  width: 90%;
+  margin-top: -15%;
+  background-color: #0455BF;
+  border-radius: 20px;
+}
+.calculator__display .panel, .calculator__display .panel--on {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-family: "Orbitron", sans-serif;
+  height: 70%;
+  width: 90%;
+  border-radius: 10px;
+  background-color: black;
+  font-size: 2em;
+}
+.calculator__display .panel--on {
+  background-color: #948D8D;
+}
+.calculator__row1 {
+  height: 15%;
+  width: 90%;
+}
+.calculator__row2 {
+  height: 10%;
+  width: 90%;
+  margin-bottom: -5%;
+}
+.calculator__big-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: 45%;
+  width: 90%;
+  margin-bottom: 5%;
+}
+
+.circle-button--yellow {
+  background-color: #F2A20C;
+}
+.circle-button--grey {
+  background-color: #948D8D;
+}
+
+.flat-button, .flat-button--blue, .flat-button--yellow, .flat-button--grey {
+  font-family: "Fredoka One", cursive;
+  background-color: inherit;
+  border: none;
+  text-shadow: 2px 2px black;
+}
+.flat-button--grey {
+  font-size: 2em;
+  color: #948D8D;
+}
+.flat-button--yellow {
+  font-size: 2.5em;
+  color: #F2A20C;
+}
+.flat-button--blue {
+  font-size: 3em;
+  color: #0455BF;
+}

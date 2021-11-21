@@ -1,0 +1,27 @@
+@use "./palette" as palette;
+
+%centerFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%rowAround {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+%circleButtonShape {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+%pressedButton {
+    // shifts the element down without moving others around it
+    margin-top: 2px;
+    margin-bottom: -2px;
+    text-shadow: none;
+}
+@mixin flatButtonStyle($color, $size) {
+    font-size: $size;
+    color: $color;
+}

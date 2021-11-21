@@ -1,0 +1,97 @@
+@use "./partials/mixins" as mixin;
+@use "./partials/palette" as palette;
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+// get a nice calculator font, maybe a 7 segment if you can find one
+
+main {
+    @extend %centerFlex;
+}
+.calculator {
+    @extend %centerFlex;
+    flex-direction: column;
+    background-color: palette.$palette-red;
+    border: 10px solid maroon;
+    border-radius: 50% / 10%;
+    height: 500px;
+    width: 300px ;
+    margin-top: 5%;
+    &__display {
+        @extend %centerFlex;
+        height: 25%;
+        width: 90%;
+        margin-top: -15%;
+        background-color: palette.$palette-blue;
+        border-radius: 20px;
+        & .panel {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            font-family: 'Orbitron', sans-serif;
+            height: 70%;
+            width: 90%;
+            border-radius: 10px;
+            background-color: black;
+            font-size: 2em;
+            &--on {
+                @extend .panel;
+                background-color: palette.$palette-grey;
+            }
+        }
+    }
+    &__row1 {
+        @extend %rowAround;
+        height: 15%;
+        width: 90%;
+    }
+    &__row2 {
+        @extend %rowAround;
+        height: 10%;
+        width: 90%;
+        margin-bottom: -5%;
+    }
+    &__big-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        height: 45%;
+        width: 90%;
+        margin-bottom: 5%;
+    }
+}
+.circle-button {
+    &--yellow {
+        @extend %circleButtonShape;
+        background-color: palette.$palette-yellow;
+    }
+    &--grey {
+        @extend %circleButtonShape;
+        background-color: palette.$palette-grey;
+    }
+}
+.flat-button {
+    font-family: 'Fredoka One', cursive;
+    background-color: inherit;
+    border: none;
+    text-shadow: 2px 2px black;
+    &--grey {
+        @extend .flat-button;
+        @include mixin.flatButtonStyle(palette.$palette-grey, 2em);
+        &:active {
+            @extend %pressedButton;
+        }
+    }
+    &--yellow {
+        @extend .flat-button;
+        @include mixin.flatButtonStyle(palette.$palette-yellow, 2.5em);
+        &:active {
+            @extend %pressedButton;
+        }
+    }
+    &--blue {
+        @extend .flat-button;
+        @include mixin.flatButtonStyle(palette.$palette-blue, 3em);
+        &:active {
+            @extend %pressedButton;
+        }
+    }
+}
