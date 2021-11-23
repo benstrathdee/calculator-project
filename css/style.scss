@@ -1,6 +1,8 @@
 @use "./partials/mixins" as mixin;
 @use "./partials/palette" as palette;
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+// get a nice calculator font, maybe a 7 segment if you can find one
 
 main {
     @extend %centerFlex;
@@ -22,10 +24,19 @@ main {
         background-color: palette.$palette-blue;
         border-radius: 20px;
         & .panel {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            font-family: 'Orbitron', sans-serif;
             height: 70%;
             width: 90%;
-            background-color: palette.$palette-grey;
             border-radius: 10px;
+            background-color: black;
+            font-size: 2em;
+            &--on {
+                @extend .panel;
+                background-color: palette.$palette-grey;
+            }
         }
     }
     &__row1 {
@@ -65,13 +76,22 @@ main {
     &--grey {
         @extend .flat-button;
         @include mixin.flatButtonStyle(palette.$palette-grey, 2em);
+        &:active {
+            @extend %pressedButton;
+        }
     }
     &--yellow {
         @extend .flat-button;
         @include mixin.flatButtonStyle(palette.$palette-yellow, 2.5em);
+        &:active {
+            @extend %pressedButton;
+        }
     }
     &--blue {
         @extend .flat-button;
         @include mixin.flatButtonStyle(palette.$palette-blue, 3em);
+        &:active {
+            @extend %pressedButton;
+        }
     }
 }
