@@ -7,6 +7,7 @@ let result = 0;
 let memory = 0;
 const inputButtonNum = document.querySelectorAll(".input-button--number");
 const inputButtonOp = document.querySelectorAll(".input-button--operator");
+const panelSize = getByID("panelSize").value;
 const operators = ["+", "-", "×", "÷", "√"];
 
 // Resets all changeable values to 0, resets display panel
